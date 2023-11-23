@@ -9,3 +9,40 @@
 [“Russia”, “Denmark”, “Kazan”] → []
 */
 
+
+
+
+
+string[] words = new string [4] { "Hello", "2", "world", ":-)" };
+string[] array = new string[words.Length];
+int maxNumOfChar = 3;
+int count = 0;
+
+void PrintArray(string[]arr)
+{
+  Console.Write("[ ");
+  for (int i = 0; i < arr.Length; i++)
+  {
+    Console.Write($"{arr[i],5}");
+  }
+  Console.Write(" ]");
+}
+
+
+
+void ValidateStrSymbol(string[] words, string[] array)
+{
+    for (int i = 0; i < words.Length; i++)
+    {
+        if (words[i].Length <= maxNumOfChar) 
+        {
+          array[count] = words[i];
+          count++;
+        }
+    }
+}
+
+PrintArray(words);
+ValidateStrSymbol(words, array);
+Console.WriteLine();
+PrintArray(array);
